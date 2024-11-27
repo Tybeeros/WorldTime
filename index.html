@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <link href="/static/styles.css" rel="stylesheet">
+        <title>Timezones</title>
+    </head>
+    <body>
+        <div class="header">
+            <h1>Time</h1>
+        </div>
+        <div class="container">
+            <div class="section">
+                <h2>Time in New York</h2>
+                <p class="datetime">Date: {{ date }} | Time: <span id="time">{{ time }}</span> | Year: {{ year }}</p>
+                    <script>
+                    function updateTime() {
+                        const now = new Date();
+                        const timeString = now.toLocaleTimeString();
+                        document.getElementById('time').textContent = timeString;
+                    }
+
+                    setInterval(updateTime, 1000);
+                    </script>
+            </div>
+        </div>
+    </body>
+</html>
